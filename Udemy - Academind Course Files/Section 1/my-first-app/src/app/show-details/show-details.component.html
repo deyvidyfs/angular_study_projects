@@ -1,0 +1,13 @@
+<button *ngIf="!showDetails; else detailsShown" class="btn btn-primary" (click)="logShowDetails()">Show Details</button>
+
+<ng-template #detailsShown>
+    <button class="btn btn-primary" (click)="showDetails = false">Hide</button>
+    <p class="mt-2">{{details}}</p>
+</ng-template>
+
+
+
+<div *ngFor='let entry of buttonLog; index as i' class="mt-2"> 
+    <p [ngStyle]="{backgroundColor: getBgColor()}"
+    [ngClass]="{specialLog: (i > 4)}">{{entry}}</p>
+</div>
