@@ -15,13 +15,8 @@ export class ShowDetailsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  logShowDetails(){
-    this.showDetails = true;
+  onToggle(){
+    this.showDetails = !this.showDetails;
     this.buttonLog.push('Details shown at ' + new Date().toLocaleString());
   }
-
-  getBgColor(){
-    return this.buttonLog.length < 5 ? 'white' : 'blue';
-  }
-
 }
